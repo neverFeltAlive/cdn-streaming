@@ -12,6 +12,18 @@
     <h1 class='video-player__title'>Video Player</h1>
     <div class='video-player__inner'>
       <video id='hls-player' class='video-player__video' controls></video>
+      <div class='video-player__counters'>
+        <div class='buffer-counter'>
+          <div class='buffer-counter__counter'>
+            Размер:
+            <span class='buffer-counter__count js-buffer-size-count'>0</span>
+          </div>
+          <div class='buffer-counter__counter'>
+            Длительность:
+            <span class='buffer-counter__count js-buffer-length-count'>0</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
