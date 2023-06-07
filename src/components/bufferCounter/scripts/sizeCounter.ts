@@ -2,7 +2,7 @@ import Hls from 'hls.js';
 
 import { bytesToSizeString } from '@utils/helpers.ts';
 
-const CHUNKS_QUEUE_SIZE = 27;
+const CHUNKS_QUEUE_SIZE = 11;
 
 type Chunk = {
   id: number;
