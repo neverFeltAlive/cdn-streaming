@@ -1,5 +1,7 @@
 import Hls from 'hls.js';
 
+import { secondsToTimeString } from '@utils/helpers.ts';
+
 const getBufferLength = (ranges: TimeRanges | undefined) => {
   if (!ranges) return 0;
 
@@ -18,9 +20,9 @@ export const addDurationCounterEvents = (hls: Hls) => {
 
   if (durationCounter) {
     hls.on(Hls.Events.BUFFER_APPENDED, () => {
-      durationCounter.innerText = getBufferLength(
-        hls.media?.buffered
-      ).toLocaleString();
+      durationCounter.innerText = secondsToTimeString(
+        getBufferLength(hls.media?.buffered)
+      );
     });
   }
 };

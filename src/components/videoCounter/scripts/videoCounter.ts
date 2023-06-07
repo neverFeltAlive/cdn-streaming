@@ -1,6 +1,6 @@
 import Hls from 'hls.js';
 
-import { convertSecondsToTimeString } from '@utils/helpers.ts';
+import { secondsToTimeString } from '@utils/helpers.ts';
 
 import '../styles/style.scss';
 
@@ -14,7 +14,7 @@ export const init = (hls: Hls) => {
     if (current) {
       hls.media.addEventListener('timeupdate', () => {
         if (hls.media?.currentTime) {
-          current.innerText = convertSecondsToTimeString(
+          current.innerText = secondsToTimeString(
             Math.floor(hls.media.currentTime)
           );
         }
@@ -30,7 +30,7 @@ export const init = (hls: Hls) => {
     if (all) {
       hls.on(Hls.Events.LEVEL_LOADED, () => {
         if (hls.media) {
-          all.innerText = convertSecondsToTimeString(hls.media.duration);
+          all.innerText = secondsToTimeString(hls.media.duration);
         }
       });
     }
