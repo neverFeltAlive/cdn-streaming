@@ -41,3 +41,21 @@ export const getFormattedSize = (
     ]);
   }
 };
+
+/**
+ * Приводит время к формату минуты:секунды
+ * @param time - время в секундах
+ */
+export const convertSecondsToTimeString = (time: number) => {
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+
+  return `${formatNumber(minutes)}:${formatNumber(seconds)}`;
+};
+
+/**
+ * Приводит число к формату 00 (9 -> 09, 10 -> 10, 3 -> 03 и т.д.)
+ * @param number
+ */
+export const formatNumber = (number: number) =>
+  number < 10 ? '0' + number : String(number);
