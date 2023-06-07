@@ -46,11 +46,11 @@ export const getFormattedSize = (
  * Приводит время к формату минуты:секунды
  * @param time - время в секундах
  */
-export const convertSecondsToTimeString = (time: number) => {
+export const secondsToTimeString = (time: number) => {
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
-  return `${formatNumber(minutes)}:${formatNumber(seconds)}`;
+  return `${formatNumber(minutes)}:${formatNumber(Math.floor(seconds))}`;
 };
 
 /**
