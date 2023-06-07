@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <link rel='icon' type='image/svg+xml' href='/vite.svg' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Video Player</title>
+</head>
+<body>
+<main>
+  <section class='video-player container'>
+    <h1 class='video-player__title'>Video Player</h1>
+    <div class='video-player__inner'>
+      <video id='hls-player' class='video-player__video' controls></video>
+    </div>
+  </section>
+</main>
+<script type='module' src='/src/main.ts'></script>
+</body>
 </html>
