@@ -1,6 +1,7 @@
 import Hls from 'hls.js';
 
 import { initBufferCounter } from '@components/bufferCounter';
+import { initVideoPlayer } from '@components/videoCounter';
 
 import '../styles/style.scss';
 
@@ -20,4 +21,5 @@ export const init = () => {
   hls.attachMedia(videoElement);
 
   initBufferCounter(hls);
+  initVideoPlayer(hls);
 };
