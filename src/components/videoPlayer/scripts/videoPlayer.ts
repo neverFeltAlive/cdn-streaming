@@ -14,7 +14,7 @@ export const init = () => {
 
   if (!videoElement) return;
 
-  const hls = new Hls();
+  const hls = new Hls({ maxBufferLength: 180, maxBufferSize: 200 });
 
   hls.loadSource(VIDEO_SOURCE);
   hls.attachMedia(videoElement);
