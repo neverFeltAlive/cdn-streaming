@@ -1,6 +1,8 @@
 import Hls from 'hls.js';
 
-import './style.scss';
+import { initBufferCounter } from '@components/bufferCounter';
+
+import '../styles/style.scss';
 
 const VIDEO_SOURCE =
   'https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8';
@@ -12,8 +14,10 @@ export const init = () => {
 
   if (!videoElement) return;
 
-  const hlsPlayer = new Hls();
+  const hls = new Hls({ maxBufferLength: 180, maxBufferSize: 200 });
 
-  hlsPlayer.loadSource(VIDEO_SOURCE);
-  hlsPlayer.attachMedia(videoElement);
+  hls.loadSource(VIDEO_SOURCE);
+  hls.attachMedia(videoElement);
+
+  initBufferCounter(hls);
 };

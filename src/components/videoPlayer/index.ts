@@ -1,1 +1,1 @@
-export { init as initVideoPlayer } from './videoPlayer.ts';
+export { init as initVideoPlayer } from './scripts/videoPlayer.ts';
