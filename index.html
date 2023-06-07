@@ -8,8 +8,12 @@
 </head>
 <body>
 <main>
-  <h1>Video Player</h1>
-  <video></video>
+  <section class='video-player container'>
+    <h1 class='video-player__title'>Video Player</h1>
+    <div class='video-player__inner'>
+      <video id='hls-player' class='video-player__video' controls></video>
+    </div>
+  </section>
 </main>
 <script type='module' src='/src/main.ts'></script>
 </body>

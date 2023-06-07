@@ -1,0 +1,11 @@
+@import "vars";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: $gray;
+}
+
+.container {
+  padding: 0 50px;
+}
