@@ -1,0 +1,25 @@
+@import "@utils/vars";
+
+.buffer-counter {
+  padding: 20px;
+  background-color: $white;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__counter {
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__count {
+    color: $red;
+    font-weight: 400;
+  }
+}
