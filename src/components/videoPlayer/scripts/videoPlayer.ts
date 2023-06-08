@@ -1,6 +1,7 @@
 import Hls from 'hls.js';
 
 import { initBufferCounter } from '@components/bufferCounter';
+import { initControls } from '@components/videoControls';
 import { initVideoPlayer } from '@components/videoCounter';
 
 import '../styles/style.scss';
@@ -22,4 +23,5 @@ export const init = () => {
 
   initBufferCounter(hls);
   initVideoPlayer(hls);
+  initControls(videoElement);
 };

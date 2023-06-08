@@ -11,7 +11,22 @@
   <section class='video-player container'>
     <h1 class='video-player__title'>Video Player</h1>
     <div class='video-player__inner'>
-      <video id='hls-player' class='video-player__video' controls></video>
+      <div class='video-controls__container js-video-container'>
+        <div class='video-controls js-controls'>
+          <video id='hls-player' class='video-player__video'></video>
+          <div class='video-controls__inner'>
+            <div class='video-controls__play js-controls-play'>
+              <div class='video-controls__button'>play</div>
+            </div>
+            <div class='video-controls__pause js-controls-pause'>
+              <div class='video-controls__button'>pause</div>
+            </div>
+            <div class='video-controls__fullscreen js-controls-fullscreen'>
+              <div class='video-controls__button'>fullscreen</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class='video-player__counters'>
         <div class='buffer-counter'>
           <h3 class='buffer-counter__title'>Статистика буфера:</h3>
@@ -38,6 +53,10 @@
           /&nbsp;
           <span class='video-counter__all js-video-counter-all'>00:00</span>
         </div>
+      </div>
+    </div>
+    <div class='video-modal' id='video-modal'>
+      <div class='video-modal__container js-modal-container'>
       </div>
     </div>
   </section>
