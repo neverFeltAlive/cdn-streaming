@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <link rel='icon' type='image/svg+xml' href='/vite.svg' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Video Player</title>
+  <script type="module" crossorigin src="/assets/index-38ba626e.js"></script>
+  <link rel="stylesheet" href="/assets/index-ee8cdb56.css">
+</head>
+<body>
+<main>
+  <section class='video-player container'>
+    <h1 class='video-player__title'>Video Player</h1>
+    <div class='video-player__inner'>
+      <div class='video-controls__container js-video-container'>
+        <div class='video-controls js-controls'>
+          <video id='hls-player' class='video-player__video'></video>
+          <div class='video-controls__inner'>
+            <div class='video-controls__play js-controls-play'>
+              <div class='video-controls__button'>play</div>
+            </div>
+            <div class='video-controls__pause js-controls-pause'>
+              <div class='video-controls__button'>pause</div>
+            </div>
+            <div class='video-controls__fullscreen js-controls-fullscreen'>
+              <div class='video-controls__button'>fullscreen</div>
+            </div>
+            <div class="video-controls__progress">
+              <div class='video-controls__progress-inner'>
+                <progress class="video-controls__progress-bar js-video-progress-bar" value="0"></progress>
+                <input class="video-controls__progress-seek js-video-progress-seek" value="0" min="0" type="range" step="1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='video-player__counters'>
+        <div class='buffer-counter'>
+          <h3 class='buffer-counter__title'>Статистика буфера:</h3>
+          <div class='buffer-counter__counter'>
+            Размер последнего видео чанка:
+            <span class='buffer-counter__count js-buffer-size-video-count'>0</span>
+          </div>
+          <div class='buffer-counter__counter'>
+            Размер последнего аудио чанка:
+            <span class='buffer-counter__count js-buffer-size-audio-count'>0</span>
+          </div>
+          <div class='buffer-counter__counter'>
+            Длительность видео в буфере:
+            <span class='buffer-counter__count js-buffer-length-count'>0</span>
+          </div>
+          <hr/>
+          <div class='buffer-counter__counter'>
+            Размер видео буфера:
+            <span class='buffer-counter__count js-buffer-total-size-count'>0</span>
+          </div>
+        </div>
+        <div class='video-counter'>
+          <span class='video-counter__current js-video-counter-current'>00:00</span>&nbsp;
+          /&nbsp;
+          <span class='video-counter__all js-video-counter-all'>00:00</span>
+        </div>
+      </div>
+    </div>
+    <div class='video-modal' id='video-modal'>
+      <div class='video-modal__container js-modal-container'>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
