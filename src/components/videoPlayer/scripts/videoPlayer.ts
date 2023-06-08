@@ -23,5 +23,5 @@ export const init = () => {
 
   initBufferCounter(hls);
   initVideoPlayer(hls);
-  initControls(videoElement);
+  initControls(videoElement, hls);
 };

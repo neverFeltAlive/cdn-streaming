@@ -1,38 +1,19 @@
-import '../styles/style.scss';
+import Hls from 'hls.js';
 
-export const init = (videoElement: HTMLVideoElement) => {
+import '../styles/style.scss';
+import { addFullscreenControls } from './fulllscreenControls.ts';
+import { addPlayStateControls } from './playStateControls.ts';
+import { addProgressControls } from './progressControls.ts';
+
+export const init = (videoElement: HTMLVideoElement, hls: Hls) => {
   const controls = document.querySelector('.js-controls');
 
   if (controls) {
-    const playButton = document.querySelector('.js-controls-play');
-    if (playButton) {
-      playButton.addEventListener('click', () => {
-        videoElement.play();
-        controls.classList.add('active');
-      });
-    }
+    addPlayStateControls(controls, videoElement);
+    addFullscreenControls(controls);
 
-    const pauseButton = document.querySelector('.js-controls-pause');
-    if (pauseButton) {
-      pauseButton.addEventListener('click', () => {
-        videoElement.pause();
-        controls.classList.remove('active');
-      });
-    }
-
-    const fullscreen = document.querySelector('.js-controls-fullscreen');
-    const modal = document.querySelector<HTMLDialogElement>('#video-modal');
-    if (fullscreen && modal) {
-      fullscreen.addEventListener('click', (event) => {
-        event.stopPropagation();
-        const container = modal.classList.contains('active')
-          ? document.querySelector('.js-video-container')
-          : modal.querySelector('.js-modal-container');
-        if (container) {
-          container.appendChild(controls);
-          modal.classList.toggle('active');
-        }
-      });
-    }
+    hls.on(Hls.Events.LEVEL_LOADED, () => {
+      addProgressControls(videoElement);
+    });
   }
 };
