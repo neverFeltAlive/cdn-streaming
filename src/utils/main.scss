@@ -1,9 +1,18 @@
 @import "vars";
+@import "fonts";
 
 body {
   width: 100%;
   min-height: 100vh;
   background-color: $gray;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "DrukCyr", sans-serif;
+  font-weight: 700;
 }
 
 .container {
